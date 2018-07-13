@@ -4192,11 +4192,12 @@ MonoBehaviour:
   forwardWheel: {fileID: 1083238615}
   backWheel: {fileID: 1129194027}
   centerOfMass: {fileID: 342081926}
-  mainLights: []
-  stopLights: []
-  retroLight: []
-  leftArrowLight: []
-  rightArrowLight: []
+  lights: {fileID: 1063448346}
+  mainLights: {fileID: 1626741226}
+  stopLights: {fileID: 1992389919}
+  retroLights: {fileID: 1192012512}
+  leftArrowLights: {fileID: 1904593375}
+  rightArrowLights: {fileID: 1740514302}
   wheelRadius: 0.7
   wheelOffset: 0.1
   steerSensivity: 100
@@ -4206,8 +4207,6 @@ MonoBehaviour:
   highSpeed: 25
   steer: 0
   acceleration: 100
-  brakeForward: 0
-  brakeBack: 0
 --- !u!65 &917798803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4216,7 +4215,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 917798801}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.8296127, y: 2.2529106, z: 8.550659}
@@ -5506,7 +5505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1192012513
 Transform:
   m_ObjectHideFlags: 0
@@ -5515,9 +5514,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192012512}
   m_LocalRotation: {x: -0, y: 0.9961947, z: -0.08715578, w: 0}
-  m_LocalPosition: {x: 0, y: 0.5319996, z: -2.315}
+  m_LocalPosition: {x: 0, y: 0.548, z: -2.336}
   m_LocalScale: {x: 1, y: 0.9999999, z: 1.0000005}
-  m_Children: []
+  m_Children:
+  - {fileID: 1941274996}
   m_Father: {fileID: 1063448347}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 10, y: 180, z: 0}
@@ -8367,7 +8367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1626741227
 Transform:
   m_ObjectHideFlags: 0
@@ -8879,13 +8879,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1740514303}
   - component: {fileID: 1740514304}
+  - component: {fileID: 1740514305}
   m_Layer: 0
   m_Name: Right Arrow Light
   m_TagString: Right Arrow Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1740514303
 Transform:
   m_ObjectHideFlags: 0
@@ -8911,8 +8912,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.44483584, b: 0, a: 1}
-  m_Intensity: 101
-  m_Range: 0.3
+  m_Intensity: 40
+  m_Range: 0.4
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -8937,6 +8938,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1740514305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740514302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4b71ab7ed07ef4e90950c544f60f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
+  onTime: 0.5
 --- !u!1 &1742479596
 GameObject:
   m_ObjectHideFlags: 0
@@ -9456,13 +9470,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1904593376}
   - component: {fileID: 1904593377}
+  - component: {fileID: 1904593378}
   m_Layer: 0
   m_Name: Left Arrow Light
   m_TagString: Left Arrow Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1904593376
 Transform:
   m_ObjectHideFlags: 0
@@ -9471,7 +9486,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1904593375}
   m_LocalRotation: {x: -0, y: 0.9961947, z: -0.08715578, w: 0}
-  m_LocalPosition: {x: -0.139, y: 0.54, z: -1.944}
+  m_LocalPosition: {x: -0.154, y: 0.54, z: -1.944}
   m_LocalScale: {x: 1, y: 0.9999999, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 1063448347}
@@ -9488,8 +9503,89 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.44483584, b: 0, a: 1}
-  m_Intensity: 101
-  m_Range: 0.3
+  m_Intensity: 40
+  m_Range: 0.4
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &1904593378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904593375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4b71ab7ed07ef4e90950c544f60f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
+  onTime: 0.5
+--- !u!1 &1941274995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1653554131929774, guid: 10d8871b4c252334d9b956fc333de8c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1941274996}
+  - component: {fileID: 1941274997}
+  m_Layer: 0
+  m_Name: Stop Light (1)
+  m_TagString: Stop Light
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941274996
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4919342236331006, guid: 10d8871b4c252334d9b956fc333de8c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1941274995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1192012513}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1941274997
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 108807874133355278, guid: 10d8871b4c252334d9b956fc333de8c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1941274995}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 10
+  m_Range: 0.2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -9637,7 +9733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1992389920
 Transform:
   m_ObjectHideFlags: 0

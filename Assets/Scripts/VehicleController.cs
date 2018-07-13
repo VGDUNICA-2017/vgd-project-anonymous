@@ -19,11 +19,12 @@ public class VehicleController : MonoBehaviour{
     public Transform forwardWheel;
     public Transform backWheel;
     public Transform centerOfMass;
-    public GameObject[] mainLights;
-    public GameObject[] stopLights;
-    public GameObject[] retroLight;
-    public GameObject[] leftArrowLight;
-    public GameObject[] rightArrowLight;
+    public GameObject lights;
+    public GameObject mainLights;
+    public GameObject stopLights;
+    public GameObject retroLights;
+    public GameObject leftArrowLights;
+    public GameObject rightArrowLights;
     public float wheelRadius = 0.3f;
     public float wheelOffset = 0.1f;
     public float steerSensivity = 30;
@@ -44,15 +45,14 @@ public class VehicleController : MonoBehaviour{
     private float prevOmega = 0;
     private float speedVal = 0;
     private float prevSteer = 0f;
-
+    private float brakeForward;
+    private float brakeBack;
 
     /*
         ELIMINARE    
         */
     public float steer;
     public float acceleration;
-    public float brakeForward;
-    public float brakeBack;
 
     //Class contains wheels informations
     public class WheelData {
@@ -98,6 +98,9 @@ public class VehicleController : MonoBehaviour{
                 Entering();
             }
         }
+        if (isinvehicle == true) {
+            UpdateLights(brakeForward, brakeBack);
+        }
     }
 
     void FixedUpdate() {
@@ -140,10 +143,10 @@ public class VehicleController : MonoBehaviour{
             if (Input.GetAxis("Jump")>0) {
                 input.brakeBack = Input.GetAxis("Jump");
             }
-            motoMove(motoControl(input));
-            updateWheels();
+            MotoMove(MotoControl(input));
+            UpdateWheels();
             if (Input.GetAxis("Fire3")==1) {
-                pickUp();
+                PickUp();
             }
         }
         else {
@@ -163,14 +166,14 @@ public class VehicleController : MonoBehaviour{
     }
 
     //Probably picks up the grounded vehicle
-    private void pickUp() {
+    private void PickUp() {
         Transform transform = GetComponent<Transform>();
         transform.position = transform.position + new Vector3(0, 0.2f, 0);
         transform.rotation = new Quaternion(0, 0, 0, 1);
     }
 
     //Controls vehicle movement
-    private MotoInput motoControl(MotoInput input) {       
+    private MotoInput MotoControl(MotoInput input) {       
         var actualPos = transform.position;
         var speed = (actualPos - prevPos) / Time.fixedDeltaTime;
         prevPos = actualPos;
@@ -207,7 +210,7 @@ public class VehicleController : MonoBehaviour{
     }
 
     //Moves the vehicle
-    private void motoMove(MotoInput input) {
+    private void MotoMove(MotoInput input) {
         forwardCollider.steerAngle = Mathf.Clamp(input.steer, -1, 1) * maxSteerAngle;
 
         forwardCollider.brakeTorque = maxForwardBrake * input.brakeForward;
@@ -215,7 +218,7 @@ public class VehicleController : MonoBehaviour{
         backCollider.motorTorque = maxMotorTorque * input.acceleration;
     }
 
-    private void updateWheels() {
+    private void UpdateWheels() {
         float delta = Time.fixedDeltaTime;
 
         foreach (WheelData w in wheels) {
@@ -236,6 +239,33 @@ public class VehicleController : MonoBehaviour{
         }
     }
 
+    //Updates lights
+    void UpdateLights(float brakefw, float brakeb) {
+        if (Input.GetButtonDown("Lights")) {
+            mainLights.SetActive(!(mainLights.activeSelf));
+        }
+
+        if (brakeb > 0 || brakefw > 0) {
+            stopLights.SetActive(true);
+        } else {
+            stopLights.SetActive(false);
+        }
+
+        if (Input.GetAxis("Horizontal")<0) {
+            leftArrowLights.SetActive(true);
+        } else {
+            leftArrowLights.SetActive(false);
+        }
+
+        if (Input.GetAxis("Horizontal")>0) {
+            rightArrowLights.SetActive(true);
+        } else {
+            rightArrowLights.SetActive(false);
+        }
+        
+         retroLights.SetActive(retro);
+    }
+
     //If the player is on the vehicle he can abandon it
     void Exiting(){
         if (isinvehicle == true){
@@ -243,6 +273,7 @@ public class VehicleController : MonoBehaviour{
                 player.transform.position = spawn.position;
                 player.SetActive(true);
                 rider.SetActive(false);
+                lights.SetActive(false);
                 isinvehicle = false;
             }
         }
@@ -254,6 +285,7 @@ public class VehicleController : MonoBehaviour{
             if (Input.GetButtonDown("Interact")){
                 player.SetActive(false);
                 //rider.SetActive(true);
+                lights.SetActive(true);
                 isinvehicle = true;
             }
         }
