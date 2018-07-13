@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private new Transform transform;
     public float rotation;
-    
+
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
@@ -34,13 +34,12 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("Moving", false);
             animator.SetBool("Running", false);
         }
-
-        if (isInputActive && Input.GetButtonDown("Jump")) {
+        if (isInputActive && Input.GetButton("Jump")) {
             animator.SetBool("Jump", true);
-        }
-        if (Input.GetButtonUp("Jump")) {
+        } else {
             animator.SetBool("Jump", false);
         }
+
         if (isInputActive && Input.GetButtonDown("Interact")) {
             animator.SetBool("Pizza", true);
         }

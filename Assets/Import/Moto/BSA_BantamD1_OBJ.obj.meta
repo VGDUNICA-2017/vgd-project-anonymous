@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 84fd34db5a85c934bb361507a73a3d90
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: batterybox
+    100002: bolts_01
+    100004: bolts_013
+    100006: bolts_014
+    100008: bolts_015
+    100010: bolts_02
+    100012: bolts_04
+    100014: bolts_05
+    100016: bolts_06
+    100018: bolts_07
+    100020: bolts_08
+    100022: bolts_09
+    100024: bolts_10
+    100026: bolts_11
+    100028: brake_b
+    100030: brake_cable01
+    100032: brake_pedal
+    100034: brakebar_b
+    100036: //RootNode
+    100038: chain
+    100040: chaincover
+    100042: Cylinder01
+    100044: distributor_cover
+    100046: engine_block
+    100048: engine_cover
+    100050: engine_cylinder
+    100052: exhaust
+    100054: footpegs
+    100056: forks
+    100058: frame
+    100060: gascap
+    100062: gear_lever
+    100064: grips
+    100066: handlebar
+    100068: handleclamp
+    100070: kickstart
+    100072: lamp_b
+    100074: lamp_f
+    100076: lampsupport_b
+    100078: lampsupport_f
+    100080: mudguard_b
+    100082: mudguard_f
+    100084: rack
+    100086: seat
+    100088: seat_springs
+    100090: sparkplug
+    100092: speedo
+    100094: sprocket_01
+    100096: stand
+    100098: suspension_l
+    100100: suspension_r
+    100102: tank
+    100104: tripleclamp
+    100106: tyre_b
+    100108: tyre_f
+    100110: wheel_b
+    100112: wheel_f
+    400000: batterybox
+    400002: bolts_01
+    400004: bolts_013
+    400006: bolts_014
+    400008: bolts_015
+    400010: bolts_02
+    400012: bolts_04
+    400014: bolts_05
+    400016: bolts_06
+    400018: bolts_07
+    400020: bolts_08
+    400022: bolts_09
+    400024: bolts_10
+    400026: bolts_11
+    400028: brake_b
+    400030: brake_cable01
+    400032: brake_pedal
+    400034: brakebar_b
+    400036: //RootNode
+    400038: chain
+    400040: chaincover
+    400042: Cylinder01
+    400044: distributor_cover
+    400046: engine_block
+    400048: engine_cover
+    400050: engine_cylinder
+    400052: exhaust
+    400054: footpegs
+    400056: forks
+    400058: frame
+    400060: gascap
+    400062: gear_lever
+    400064: grips
+    400066: handlebar
+    400068: handleclamp
+    400070: kickstart
+    400072: lamp_b
+    400074: lamp_f
+    400076: lampsupport_b
+    400078: lampsupport_f
+    400080: mudguard_b
+    400082: mudguard_f
+    400084: rack
+    400086: seat
+    400088: seat_springs
+    400090: sparkplug
+    400092: speedo
+    400094: sprocket_01
+    400096: stand
+    400098: suspension_l
+    400100: suspension_r
+    400102: tank
+    400104: tripleclamp
+    400106: tyre_b
+    400108: tyre_f
+    400110: wheel_b
+    400112: wheel_f
+    2300000: batterybox
+    2300002: bolts_01
+    2300004: bolts_013
+    2300006: bolts_014
+    2300008: bolts_015
+    2300010: bolts_02
+    2300012: bolts_04
+    2300014: bolts_05
+    2300016: bolts_06
+    2300018: bolts_07
+    2300020: bolts_08
+    2300022: bolts_09
+    2300024: bolts_10
+    2300026: bolts_11
+    2300028: brake_b
+    2300030: brake_cable01
+    2300032: brake_pedal
+    2300034: brakebar_b
+    2300036: chain
+    2300038: chaincover
+    2300040: Cylinder01
+    2300042: distributor_cover
+    2300044: engine_block
+    2300046: engine_cover
+    2300048: engine_cylinder
+    2300050: exhaust
+    2300052: footpegs
+    2300054: forks
+    2300056: frame
+    2300058: gascap
+    2300060: gear_lever
+    2300062: grips
+    2300064: handlebar
+    2300066: handleclamp
+    2300068: kickstart
+    2300070: lamp_b
+    2300072: lamp_f
+    2300074: lampsupport_b
+    2300076: lampsupport_f
+    2300078: mudguard_b
+    2300080: mudguard_f
+    2300082: rack
+    2300084: seat
+    2300086: seat_springs
+    2300088: sparkplug
+    2300090: speedo
+    2300092: sprocket_01
+    2300094: stand
+    2300096: suspension_l
+    2300098: suspension_r
+    2300100: tank
+    2300102: tripleclamp
+    2300104: tyre_b
+    2300106: tyre_f
+    2300108: wheel_b
+    2300110: wheel_f
+    3300000: batterybox
+    3300002: bolts_01
+    3300004: bolts_013
+    3300006: bolts_014
+    3300008: bolts_015
+    3300010: bolts_02
+    3300012: bolts_04
+    3300014: bolts_05
+    3300016: bolts_06
+    3300018: bolts_07
+    3300020: bolts_08
+    3300022: bolts_09
+    3300024: bolts_10
+    3300026: bolts_11
+    3300028: brake_b
+    3300030: brake_cable01
+    3300032: brake_pedal
+    3300034: brakebar_b
+    3300036: chain
+    3300038: chaincover
+    3300040: Cylinder01
+    3300042: distributor_cover
+    3300044: engine_block
+    3300046: engine_cover
+    3300048: engine_cylinder
+    3300050: exhaust
+    3300052: footpegs
+    3300054: forks
+    3300056: frame
+    3300058: gascap
+    3300060: gear_lever
+    3300062: grips
+    3300064: handlebar
+    3300066: handleclamp
+    3300068: kickstart
+    3300070: lamp_b
+    3300072: lamp_f
+    3300074: lampsupport_b
+    3300076: lampsupport_f
+    3300078: mudguard_b
+    3300080: mudguard_f
+    3300082: rack
+    3300084: seat
+    3300086: seat_springs
+    3300088: sparkplug
+    3300090: speedo
+    3300092: sprocket_01
+    3300094: stand
+    3300096: suspension_l
+    3300098: suspension_r
+    3300100: tank
+    3300102: tripleclamp
+    3300104: tyre_b
+    3300106: tyre_f
+    3300108: wheel_b
+    3300110: wheel_f
+    4300000: batterybox
+    4300002: bolts_01
+    4300004: bolts_013
+    4300006: bolts_014
+    4300008: bolts_015
+    4300010: bolts_02
+    4300012: bolts_04
+    4300014: bolts_05
+    4300016: bolts_06
+    4300018: bolts_07
+    4300020: bolts_08
+    4300022: bolts_09
+    4300024: bolts_10
+    4300026: bolts_11
+    4300028: brake_b
+    4300030: brake_cable01
+    4300032: brake_pedal
+    4300034: brakebar_b
+    4300036: chain
+    4300038: chaincover
+    4300040: Cylinder01
+    4300042: distributor_cover
+    4300044: engine_block
+    4300046: engine_cover
+    4300048: engine_cylinder
+    4300050: exhaust
+    4300052: footpegs
+    4300054: forks
+    4300056: frame
+    4300058: gascap
+    4300060: gear_lever
+    4300062: grips
+    4300064: handlebar
+    4300066: handleclamp
+    4300068: kickstart
+    4300070: lamp_b
+    4300072: lamp_f
+    4300074: lampsupport_b
+    4300076: lampsupport_f
+    4300078: mudguard_b
+    4300080: mudguard_f
+    4300082: rack
+    4300084: seat
+    4300086: seat_springs
+    4300088: sparkplug
+    4300090: speedo
+    4300092: sprocket_01
+    4300094: stand
+    4300096: suspension_l
+    4300098: suspension_r
+    4300100: tank
+    4300102: tripleclamp
+    4300104: tyre_b
+    4300106: tyre_f
+    4300108: wheel_b
+    4300110: wheel_f
+    9500000: //RootNode
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder01Mat
+    second: {fileID: 2100000, guid: f209884a0bf86e8479a67f12f3248b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: batteryboxMat
+    second: {fileID: 2100000, guid: b0112a6e6a5c3b641a772c2c8867ffbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_013Mat
+    second: {fileID: 2100000, guid: fb1787ae5a19a6b44b10e254607c9699, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_014Mat
+    second: {fileID: 2100000, guid: 23c5e3dc6d674554e91f65e756dd8528, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_015Mat
+    second: {fileID: 2100000, guid: f03c1348815eb5d4ebb269b810671e1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_01Mat
+    second: {fileID: 2100000, guid: 0e8caa725e5fbf04faf5d31d76750d1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_02Mat
+    second: {fileID: 2100000, guid: b28a0a88db0e70642ad5c8f0e405090f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_04Mat
+    second: {fileID: 2100000, guid: 4cf93a85cd737b84d8aa90e899e9e62c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_05Mat
+    second: {fileID: 2100000, guid: 94b91b59ccfb5f14bb4fcc8d8568737c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_06Mat
+    second: {fileID: 2100000, guid: 7837608e9ea99ea4db3f529ff849745c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_07Mat
+    second: {fileID: 2100000, guid: f31f5f87812f3664ebefffdeb8fc5331, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_08Mat
+    second: {fileID: 2100000, guid: 64e74788165143e4b8c44e37d943c7ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_09Mat
+    second: {fileID: 2100000, guid: 2c59422e95089ca40a0dd34fe96c10c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_10Mat
+    second: {fileID: 2100000, guid: 41321a9e1b67cd9479f230c59e5ef62c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolts_11Mat
+    second: {fileID: 2100000, guid: 281c401b81f13164097555eeaba2caf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brake_bMat
+    second: {fileID: 2100000, guid: 2f34148fdc196494b894120b48a5d2eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brake_cable01Mat
+    second: {fileID: 2100000, guid: 9af1673440d68ef4bbb33f7ec09c15bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brake_pedalMat
+    second: {fileID: 2100000, guid: 03515847a81e2e14e92a77ba969f94ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brakebar_bMat
+    second: {fileID: 2100000, guid: d0a64171a49d3f94980755eb67e41205, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chainMat
+    second: {fileID: 2100000, guid: 435ab3a0e4723f444a9a4e1f322432da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chaincoverMat
+    second: {fileID: 2100000, guid: e11f295668aa9824da5dadaa21398f1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: distributor_coverMat
+    second: {fileID: 2100000, guid: 484d051adac6882499561b3f2ae2312b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_blockMat
+    second: {fileID: 2100000, guid: 7ef8196a336e327448ab765d7a9f56fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_coverMat
+    second: {fileID: 2100000, guid: fa8f66fa9d51abe4193acced762d42b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_cylinderMat
+    second: {fileID: 2100000, guid: e1f927f417b6c1247b74535960783c65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exhaustMat
+    second: {fileID: 2100000, guid: d9b48c04947f4e149982002df75f3800, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: footpegsMat
+    second: {fileID: 2100000, guid: a87d7f3cfec74ba4a80dd05432ee21fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: forksMat
+    second: {fileID: 2100000, guid: c8b22e7b04e4f4847963a0a0efddbbca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frameMat
+    second: {fileID: 2100000, guid: 3e95841e90742a946a3289b2ff13d179, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gascapMat
+    second: {fileID: 2100000, guid: a859a69ebf26bc940aa5ad9c2daf34f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gear_leverMat
+    second: {fileID: 2100000, guid: b86ab00a50e3f9844aa05c427aa9b8dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gripsMat
+    second: {fileID: 2100000, guid: ea2b8b0d9964b3a4fb8af40da679a5e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handlebarMat
+    second: {fileID: 2100000, guid: 80e5f66f410bdd6498fc971ffc8e76c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handleclampMat
+    second: {fileID: 2100000, guid: a0e975f26379f6b408993979e5745cb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kickstartMat
+    second: {fileID: 2100000, guid: d09e3290464a8d54daa11d3d3477921e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp_bMat
+    second: {fileID: 2100000, guid: 5c2e58ddbe0d80c44b6e285d89e867aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp_fMat
+    second: {fileID: 2100000, guid: 5aa9aa86f02b26e4c8d44d4b7242dbd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lampsupport_bMat
+    second: {fileID: 2100000, guid: 546a6f6b4408ac548a5877e696f27793, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lampsupport_fMat
+    second: {fileID: 2100000, guid: 817d78a9672c93d48ad100096953a941, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mudguard_bMat
+    second: {fileID: 2100000, guid: 76ba6f46060ae4f43a4bdc3836e6ae80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mudguard_fMat
+    second: {fileID: 2100000, guid: d5aeb5360592433488c8ad34d1590756, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rackMat
+    second: {fileID: 2100000, guid: 08aaeb11a3c862f4e881f1682ac0aa02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seatMat
+    second: {fileID: 2100000, guid: c3547a8e76d73f448a771b382c90e7d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seat_springsMat
+    second: {fileID: 2100000, guid: 8b3be5e68225ed94d88f84df8f0c3f8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sparkplugMat
+    second: {fileID: 2100000, guid: 61b5e37274c3da34fb1a870c23a18588, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: speedoMat
+    second: {fileID: 2100000, guid: 53ebbc443e9472347bef69f477fd9352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sprocket_01Mat
+    second: {fileID: 2100000, guid: eecfea4de7f9fd047963999a8b8cbe2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standMat
+    second: {fileID: 2100000, guid: 25adce2229e0db24980dbbfd85f4c126, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suspension_lMat
+    second: {fileID: 2100000, guid: 92853025dcdef924ea1c71bfc9522ccd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suspension_rMat
+    second: {fileID: 2100000, guid: 868e0b8755e341b45a017865c9026270, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tankMat
+    second: {fileID: 2100000, guid: 418eb4031ac1bda49b303509e5f11441, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tripleclampMat
+    second: {fileID: 2100000, guid: 72a939b9b401f27448075a16ce442d7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tyre_bMat
+    second: {fileID: 2100000, guid: da34e468b8f83dc439b6549dd5220d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tyre_fMat
+    second: {fileID: 2100000, guid: e78aa577506bb2f41a9d6dca4a68e1b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel_bMat
+    second: {fileID: 2100000, guid: 69d9d22bb2542f244ac8feb0058f8af2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel_fMat
+    second: {fileID: 2100000, guid: 5c940520b882a1e48b9fd14abc1b2c6b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.003
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
