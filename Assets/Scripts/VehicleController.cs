@@ -147,6 +147,7 @@ public class VehicleController : MonoBehaviour{
             if (Input.GetAxis("Fire3")==1) {
                 PickUp();
             }
+            animator.SetFloat("Speed", speedVal);
         }
         else {
             input.brakeForward = 1f;
@@ -155,7 +156,6 @@ public class VehicleController : MonoBehaviour{
         
         brakeForward=input.brakeForward;
         brakeBack=input.brakeBack;
-        animator.SetFloat("Speed", speedVal);
     }
 
     void LateUpdate() {
