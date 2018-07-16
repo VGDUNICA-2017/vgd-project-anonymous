@@ -34,6 +34,7 @@ public class VehicleController : MonoBehaviour{
     public float highSpeed = 25;
     
     private GameObject player;
+    private Animator animator;
     private bool isinvehicle;
     private bool playerClose;
     private WheelData[] wheels;
@@ -48,11 +49,6 @@ public class VehicleController : MonoBehaviour{
     private float brakeForward;
     private float brakeBack;
 
-    /*
-        ELIMINARE    
-        */
-    public float steer;
-    public float acceleration;
 
     //Class contains wheels informations
     public class WheelData {
@@ -86,6 +82,8 @@ public class VehicleController : MonoBehaviour{
         wheels = new WheelData[2];
         wheels[0] = new WheelData(forwardWheel, forwardCollider);
         wheels[1] = new WheelData(backWheel, backCollider);
+
+        animator = rider.GetComponent<Animator>();
     }
 
     //Update checks if player wants to exit or enter vehicle
@@ -100,6 +98,7 @@ public class VehicleController : MonoBehaviour{
         }
         if (isinvehicle == true) {
             UpdateLights(brakeForward, brakeBack);
+
         }
     }
 
@@ -154,11 +153,9 @@ public class VehicleController : MonoBehaviour{
             input.brakeBack = 1f;
         }
         
-        //Eliminare
-        steer =input.steer;
-        acceleration=input.acceleration;
         brakeForward=input.brakeForward;
         brakeBack=input.brakeBack;
+        animator.SetFloat("Speed", speedVal);
     }
 
     void LateUpdate() {
@@ -284,7 +281,7 @@ public class VehicleController : MonoBehaviour{
         if (playerClose == true && isinvehicle == false) {
             if (Input.GetButtonDown("Interact")){
                 player.SetActive(false);
-                //rider.SetActive(true);
+                rider.SetActive(true);
                 lights.SetActive(true);
                 isinvehicle = true;
             }
@@ -311,7 +308,6 @@ public class VehicleController : MonoBehaviour{
     void OnGUI() {
         GUI.color = Color.black;
         var area = new Rect(0, 0, 100, 250);
-        GUI.Label(area, speedVal.ToString("f1") + " m/s" + "\nangle = " + prevAngle.ToString("f3") + "\nangle' = " + prevOmega.ToString("f3") + "\nsteer = " + steer.ToString("f3")
-            + "\naccel = " + acceleration.ToString("f3") + "\nfwbrake' = " + brakeForward.ToString("f3") + "\nbkbrake' = " + brakeBack.ToString("f3"));
+        GUI.Label(area, speedVal.ToString("f1") + " m/s" + "\nangle = " + prevAngle.ToString("f3") + "\nangle' = " + prevOmega.ToString("f3") + "\nfwbrake' = " + brakeForward.ToString("f3") + "\nbkbrake' = " + brakeBack.ToString("f3"));
     }
 }
