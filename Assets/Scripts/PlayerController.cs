@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public bool isInputActive = true;
-    private Animator animator;
-    private new Transform transform;
+
     public float rotation;
+    public AudioClip[] footStepSouds;
+
+    private Animator animator;
+    private Transform transform;
+    private AudioSource audio;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         animator = GetComponent<Animator>();
         transform = GetComponent<Transform>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,19 +29,21 @@ public class PlayerController : MonoBehaviour {
             if (isInputActive && Input.GetButton("Fire3")) {
                 animator.SetBool("Running", true);
             }
-            if (Input.GetButtonUp("Fire3")){
+            if (Input.GetButtonUp("Fire3")) {
                 animator.SetBool("Running", false);
             }
             animator.SetFloat("Ahead", z);
             animator.SetFloat("Direction", x);
-            transform.Rotate(new Vector3(0, x*rotation, 0));
-        }else {
+            transform.Rotate(new Vector3(0, x * rotation, 0));
+        }
+        else {
             animator.SetBool("Moving", false);
             animator.SetBool("Running", false);
         }
         if (isInputActive && Input.GetButton("Jump")) {
             animator.SetBool("Jump", true);
-        } else {
+        }
+        else {
             animator.SetBool("Jump", false);
         }
 
@@ -46,6 +53,20 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonUp("Interact")) {
             animator.SetBool("Pizza", false);
         }
+    }
 
+    void PlaySound(Object sound) {
+        audio.clip = sound as AudioClip;
+        audio.PlayOneShot(audio.clip);
+    }
+
+    void FootStepAudio() {
+        // pick & play a random footstep sound from the array,
+        // excluding last used sound
+        int n = Random.Range(1, footStepSouds.Length);
+        audio.clip = footStepSouds[n];
+        audio.PlayOneShot(audio.clip);
+        footStepSouds[n] = footStepSouds[0];
+        footStepSouds[0] = audio.clip;
     }
 }

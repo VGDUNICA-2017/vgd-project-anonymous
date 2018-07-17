@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
-    
-public class VehicleController : MonoBehaviour{
+
+public class VehicleController : MonoBehaviour {
     //Vehicle Characteristics
-    public float maxMotorTorque=200;
+    public float maxMotorTorque = 200;
     public float maxForwardBrake = 400;
     public float maxBackBrake = 400;
-    public float maxSteerAngle=40;
+    public float maxSteerAngle = 40;
 
     //Variables for player mount/dismount
     public string playertag;
@@ -32,13 +32,19 @@ public class VehicleController : MonoBehaviour{
     public float controlOmega = 30;
     public float lowSpeed = 8;
     public float highSpeed = 25;
-    
+    public float topSpeed = 30f;
+    public AudioClip engineOn;
+    public AudioClip engine;
+    public AudioClip engineOff;
+
     private GameObject player;
     private Animator animator;
+    private new AudioSource audio;
     private bool isinvehicle;
     private bool playerClose;
     private WheelData[] wheels;
     private bool retro = false;
+    private float pitch;
 
     //Information about previous FixedUpdate
     private Vector3 prevPos = new Vector3();
@@ -48,8 +54,7 @@ public class VehicleController : MonoBehaviour{
     private float prevSteer = 0f;
     private float brakeForward;
     private float brakeBack;
-
-
+    
     //Class contains wheels informations
     public class WheelData {
 
@@ -74,7 +79,7 @@ public class VehicleController : MonoBehaviour{
     }
 
 
-    void Start(){
+    void Start() {
         isinvehicle = false;
 
         GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
@@ -84,6 +89,7 @@ public class VehicleController : MonoBehaviour{
         wheels[1] = new WheelData(backWheel, backCollider);
 
         animator = rider.GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     //Update checks if player wants to exit or enter vehicle
@@ -99,7 +105,20 @@ public class VehicleController : MonoBehaviour{
         if (isinvehicle == true) {
             UpdateLights(brakeForward, brakeBack);
 
+            if (!audio.isPlaying) {
+                audio.Play();
+            }
+            if (speedVal > .25) {
+                pitch = speedVal / topSpeed;
+                if (pitch < .5) {
+                    pitch = .5f;
+                }
+                GetComponent<AudioSource>().pitch = pitch;
+            } else {
+                GetComponent<AudioSource>().pitch = 1; 
+            }
         }
+        
     }
 
     void FixedUpdate() {
@@ -150,8 +169,8 @@ public class VehicleController : MonoBehaviour{
             animator.SetFloat("Speed", speedVal);
         }
         else {
-            input.brakeForward = 1f;
-            input.brakeBack = 1f;
+            forwardCollider.brakeTorque = maxForwardBrake;
+            backCollider.brakeTorque = maxBackBrake;
         }
         
         brakeForward=input.brakeForward;
@@ -262,7 +281,7 @@ public class VehicleController : MonoBehaviour{
         
          retroLights.SetActive(retro);
     }
-
+    
     //If the player is on the vehicle he can abandon it
     void Exiting(){
         if (isinvehicle == true){
@@ -272,6 +291,11 @@ public class VehicleController : MonoBehaviour{
                 rider.SetActive(false);
                 lights.SetActive(false);
                 isinvehicle = false;
+
+                audio.Stop();
+                audio.pitch = 1;
+                audio.clip = engineOff;
+                audio.PlayOneShot(audio.clip);
             }
         }
     }
@@ -283,7 +307,13 @@ public class VehicleController : MonoBehaviour{
                 player.SetActive(false);
                 rider.SetActive(true);
                 lights.SetActive(true);
-                isinvehicle = true;
+
+                audio.pitch = 1;
+                audio.clip = engineOn;
+                audio.PlayOneShot(audio.clip);
+                audio.clip = engine;
+
+                isinvehicle = true;                
             }
         }
     }
