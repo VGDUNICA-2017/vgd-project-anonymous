@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5e3dcc104c8eccf489ba1c10e49a4125
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - malePrefab: {fileID: 1245815326308440, guid: c5480c03b5e49eb44b7ade571136febc,
+      type: 2}
+  - femalePrefab: {fileID: 1822788789004352, guid: 24a7847aa20256f49b31e12d4d7a0d99,
+      type: 2}
+  - maleBikePrefab: {fileID: 1172404205504076, guid: 3c1b4013a60570f40b2bac9fc1d80ff5,
+      type: 2}
+  - femaleBikePrefab: {fileID: 1634841660407320, guid: 806592c81c2b06f40b8ff47e91d7642d,
+      type: 2}
+  - loadingBar: {instanceID: 0}
+  - loadingImage: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

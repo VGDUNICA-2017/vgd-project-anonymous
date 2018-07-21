@@ -9,13 +9,11 @@ public class PlayerController : MonoBehaviour {
     public AudioClip[] footStepSouds;
 
     private Animator animator;
-    private Transform transform;
-    private AudioSource audio;
+    private new AudioSource audio;
 
     // Use this for initialization
     void Start() {
         animator = GetComponent<Animator>();
-        transform = GetComponent<Transform>();
         audio = GetComponent<AudioSource>();
     }
 
@@ -34,7 +32,7 @@ public class PlayerController : MonoBehaviour {
             }
             animator.SetFloat("Ahead", z);
             animator.SetFloat("Direction", x);
-            transform.Rotate(new Vector3(0, x * rotation, 0));
+            transform.Rotate(0, x * rotation, 0);
         }
         else {
             animator.SetBool("Moving", false);

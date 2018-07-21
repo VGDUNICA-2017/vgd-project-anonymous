@@ -3,7 +3,7 @@
  using System.Collections.Generic;
 
 public class MusicPlayer : MonoBehaviour {
-    private AudioSource audio;
+    private new AudioSource audio;
     private Object[] myMusic; // declare this as Object array
     private bool inPlay = false;
 
@@ -14,7 +14,7 @@ public class MusicPlayer : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (inPlay == true && !audio.isPlaying) {
-            playRandomMusic();
+            PlayRandomMusic();
         }
         if (Input.GetKeyDown("1")) {
             myMusic= Resources.LoadAll("Music/1", typeof(AudioClip));
@@ -39,11 +39,11 @@ public class MusicPlayer : MonoBehaviour {
             audio.Stop();
         }
         if (inPlay == true && Input.GetKeyDown("n")) {
-            playRandomMusic();
+            PlayRandomMusic();
         }
     }
 
-    void playRandomMusic() {
+    void PlayRandomMusic() {
         audio.clip = myMusic[Random.Range(0, myMusic.Length)] as AudioClip;
         audio.Play();
     }

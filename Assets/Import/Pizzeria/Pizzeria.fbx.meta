@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 7f201f3dab512db4dae8c7a69e564796
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Ceiling
+    100002: chair
+    100004: chair006
+    100006: chair007
+    100008: chair008
+    100010: chair009
+    100012: chair010
+    100014: chair011
+    100016: chair012
+    100018: chair013
+    100020: chair014
+    100022: chair015
+    100024: chair016
+    100026: chair017
+    100028: chair018
+    100030: chair019
+    100032: chair020
+    100034: chair021
+    100036: chair022
+    100038: chair023
+    100040: chair1
+    100042: chair2
+    100044: chair3
+    100046: chair4
+    100048: chair5
+    100050: chair_fram
+    100052: chair_fram001
+    100054: chair_fram002
+    100056: chair_fram003
+    100058: chair_leat
+    100060: chair_leat001
+    100062: chair_leat002
+    100064: chair_leat003
+    100066: Counter
+    100068: East Wall
+    100070: Floor
+    100072: Furnace
+    100074: North Wall
+    100076: //RootNode
+    100078: South Wall
+    100080: Table
+    100082: table
+    100084: table001
+    100086: table002
+    100088: table003
+    100090: Table2
+    100092: Table3
+    100094: Table4
+    100096: table_fram
+    100098: table_fram001
+    100100: table_fram002
+    100102: table_fram003
+    100104: table_top
+    100106: table_top001
+    100108: table_top002
+    100110: table_top003
+    100112: Water Dispenser
+    100114: West Wall
+    400000: Ceiling
+    400002: chair
+    400004: chair006
+    400006: chair007
+    400008: chair008
+    400010: chair009
+    400012: chair010
+    400014: chair011
+    400016: chair012
+    400018: chair013
+    400020: chair014
+    400022: chair015
+    400024: chair016
+    400026: chair017
+    400028: chair018
+    400030: chair019
+    400032: chair020
+    400034: chair021
+    400036: chair022
+    400038: chair023
+    400040: chair1
+    400042: chair2
+    400044: chair3
+    400046: chair4
+    400048: chair5
+    400050: chair_fram
+    400052: chair_fram001
+    400054: chair_fram002
+    400056: chair_fram003
+    400058: chair_leat
+    400060: chair_leat001
+    400062: chair_leat002
+    400064: chair_leat003
+    400066: Counter
+    400068: East Wall
+    400070: Floor
+    400072: Furnace
+    400074: North Wall
+    400076: //RootNode
+    400078: South Wall
+    400080: Table
+    400082: table
+    400084: table001
+    400086: table002
+    400088: table003
+    400090: Table2
+    400092: Table3
+    400094: Table4
+    400096: table_fram
+    400098: table_fram001
+    400100: table_fram002
+    400102: table_fram003
+    400104: table_top
+    400106: table_top001
+    400108: table_top002
+    400110: table_top003
+    400112: Water Dispenser
+    400114: West Wall
+    2100000: No Name
+    2100002: Default
+    2100004: CoverDesk
+    2100006: LogoKFC_046Desk
+    2100008: RedLine
+    2100010: Glasses
+    2100012: GlassLogoFront
+    2100014: Line
+    2100016: Mat.1
+    2100018: Mat
+    2100020: Oak Polished -_
+    2300000: Ceiling
+    2300002: chair
+    2300004: chair006
+    2300006: chair007
+    2300008: chair008
+    2300010: chair009
+    2300012: chair010
+    2300014: chair011
+    2300016: chair012
+    2300018: chair013
+    2300020: chair014
+    2300022: chair015
+    2300024: chair016
+    2300026: chair017
+    2300028: chair018
+    2300030: chair019
+    2300032: chair020
+    2300034: chair021
+    2300036: chair022
+    2300038: chair023
+    2300040: chair1
+    2300042: chair2
+    2300044: chair3
+    2300046: chair4
+    2300048: chair5
+    2300050: chair_fram
+    2300052: chair_fram001
+    2300054: chair_fram002
+    2300056: chair_fram003
+    2300058: chair_leat
+    2300060: chair_leat001
+    2300062: chair_leat002
+    2300064: chair_leat003
+    2300066: Counter
+    2300068: East Wall
+    2300070: Floor
+    2300072: Furnace
+    2300074: North Wall
+    2300076: South Wall
+    2300078: table_fram
+    2300080: table_fram001
+    2300082: table_fram002
+    2300084: table_fram003
+    2300086: table_top
+    2300088: table_top001
+    2300090: table_top002
+    2300092: table_top003
+    2300094: Water Dispenser
+    2300096: West Wall
+    3300000: Ceiling
+    3300002: chair
+    3300004: chair006
+    3300006: chair007
+    3300008: chair008
+    3300010: chair009
+    3300012: chair010
+    3300014: chair011
+    3300016: chair012
+    3300018: chair013
+    3300020: chair014
+    3300022: chair015
+    3300024: chair016
+    3300026: chair017
+    3300028: chair018
+    3300030: chair019
+    3300032: chair020
+    3300034: chair021
+    3300036: chair022
+    3300038: chair023
+    3300040: chair1
+    3300042: chair2
+    3300044: chair3
+    3300046: chair4
+    3300048: chair5
+    3300050: chair_fram
+    3300052: chair_fram001
+    3300054: chair_fram002
+    3300056: chair_fram003
+    3300058: chair_leat
+    3300060: chair_leat001
+    3300062: chair_leat002
+    3300064: chair_leat003
+    3300066: Counter
+    3300068: East Wall
+    3300070: Floor
+    3300072: Furnace
+    3300074: North Wall
+    3300076: South Wall
+    3300078: table_fram
+    3300080: table_fram001
+    3300082: table_fram002
+    3300084: table_fram003
+    3300086: table_top
+    3300088: table_top001
+    3300090: table_top002
+    3300092: table_top003
+    3300094: Water Dispenser
+    3300096: West Wall
+    4300000: Floor
+    4300002: South Wall
+    4300004: North Wall
+    4300006: West Wall
+    4300008: Furnace
+    4300010: East Wall
+    4300012: Counter
+    4300014: Water Dispenser
+    4300016: chair
+    4300018: chair_fram
+    4300020: chair_leat
+    4300022: chair1
+    4300024: chair2
+    4300026: chair3
+    4300028: chair4
+    4300030: chair5
+    4300032: table_top
+    4300034: table_fram
+    4300036: chair006
+    4300038: chair_fram001
+    4300040: chair_leat001
+    4300042: chair007
+    4300044: chair008
+    4300046: chair009
+    4300048: chair010
+    4300050: chair011
+    4300052: table_fram001
+    4300054: table_top001
+    4300056: chair012
+    4300058: chair_fram002
+    4300060: chair_leat002
+    4300062: chair013
+    4300064: chair014
+    4300066: chair015
+    4300068: chair016
+    4300070: chair017
+    4300072: table_fram002
+    4300074: table_top002
+    4300076: chair018
+    4300078: chair_fram003
+    4300080: chair_leat003
+    4300082: chair019
+    4300084: chair020
+    4300086: chair021
+    4300088: chair022
+    4300090: chair023
+    4300092: table_fram003
+    4300094: table_top003
+    4300096: Ceiling
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
