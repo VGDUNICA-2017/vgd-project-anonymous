@@ -338,6 +338,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4760653194791596}
   - component: {fileID: 95937644240696704}
+  - component: {fileID: 65109627001022962}
+  - component: {fileID: 65321094377346710}
+  - component: {fileID: 114238629965717644}
   m_Layer: 0
   m_Name: african_male
   m_TagString: Untagged
@@ -1484,7 +1487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307898593906588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5668945, y: 26.212976, z: 7.9022217}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4101796072673158}
@@ -1786,6 +1789,30 @@ Transform:
   m_Father: {fileID: 4185617401495132}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65109627001022962
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307898593906588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4802682, y: 4.396822, z: 1}
+  m_Center: {x: 0.045958135, y: 1.698411, z: -3.6199443e-10}
+--- !u!65 &65321094377346710
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307898593906588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.470039, y: 4.4001217, z: 11.333832}
+  m_Center: {x: 0.22428994, y: 1.7000608, z: 1.9056467}
 --- !u!95 &95937644240696704
 Animator:
   serializedVersion: 3
@@ -1804,6 +1831,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114238629965717644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307898593906588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a38c4d64c1eaf4ba6453c32a60ac80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipping: {fileID: 0}
+  interaction: {fileID: 0}
 --- !u!137 &137214831344387444
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

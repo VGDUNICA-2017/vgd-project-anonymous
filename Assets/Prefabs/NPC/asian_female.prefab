@@ -279,6 +279,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4391120960604460}
   - component: {fileID: 95558901888361330}
+  - component: {fileID: 65919339210094848}
+  - component: {fileID: 65443994411809286}
+  - component: {fileID: 114079798519110350}
   m_Layer: 0
   m_Name: asian_female
   m_TagString: Untagged
@@ -1221,7 +1224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297012410867476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8380127, y: 26.116112, z: 4.752014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388649879012310}
@@ -1847,6 +1850,30 @@ Transform:
   m_Father: {fileID: 4346858118827398}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65443994411809286
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297012410867476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.925652, y: 4.425787, z: 9.727181}
+  m_Center: {x: -0.14400434, y: 1.7128937, z: 0.5137572}
+--- !u!65 &65919339210094848
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297012410867476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5504614, y: 4.322927, z: 1}
+  m_Center: {x: 0.06625801, y: 1.6614637, z: 0.0000000013766301}
 --- !u!95 &95558901888361330
 Animator:
   serializedVersion: 3
@@ -1865,6 +1892,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114079798519110350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297012410867476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a38c4d64c1eaf4ba6453c32a60ac80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipping: {fileID: 0}
+  interaction: {fileID: 0}
 --- !u!137 &137018094632166150
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -20,7 +20,7 @@ public class CameraMovement : MonoBehaviour {
         float horizontal = cameraSpeed * Input.GetAxis("Mouse X");
         float vertical = cameraSpeed * Input.GetAxis("Mouse Y");
         
-        if (cameraOrbit.transform.eulerAngles.z + vertical <= 0.1f || cameraOrbit.transform.eulerAngles.z + vertical >= 89.9f) {
+        if ((cameraOrbit.transform.eulerAngles.z + vertical <= 0.1f && vertical <0) || (cameraOrbit.transform.eulerAngles.z + vertical >= 90f && vertical>0)) {
             vertical = 0;
         }
 

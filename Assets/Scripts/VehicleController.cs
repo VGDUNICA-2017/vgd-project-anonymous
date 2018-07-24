@@ -184,7 +184,7 @@ public class VehicleController : MonoBehaviour {
     //Probably picks up the grounded vehicle
     private void PickUp() {
         Transform transform = GetComponent<Transform>();
-        transform.position = transform.position + new Vector3(0, 0.2f, 0);
+        transform.position = transform.position + new Vector3(-0.1f, 0.2f, 0);
         transform.rotation = new Quaternion(0, 0, 0, 1);
     }
 

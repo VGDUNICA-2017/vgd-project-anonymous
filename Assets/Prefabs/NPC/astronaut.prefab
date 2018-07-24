@@ -781,6 +781,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4731261587531006}
   - component: {fileID: 95198668852515318}
+  - component: {fileID: 65919294988739030}
+  - component: {fileID: 65418138423991262}
+  - component: {fileID: 114158732803198026}
   m_Layer: 0
   m_Name: astronaut
   m_TagString: Untagged
@@ -1673,7 +1676,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1779893834657098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.63916, y: 26.37948, z: 9.914429}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4432405097588620}
@@ -1934,6 +1937,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040676588219868}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65418138423991262
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779893834657098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.470039, y: 4.4001217, z: 11.333832}
+  m_Center: {x: 0.22428994, y: 1.7000608, z: 1.9056467}
 --- !u!65 &65676288322304314
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1958,6 +1973,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65919294988739030
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779893834657098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4802682, y: 4.396822, z: 1}
+  m_Center: {x: 0.045958135, y: 1.698411, z: -3.6199443e-10}
 --- !u!95 &95198668852515318
 Animator:
   serializedVersion: 3
@@ -1976,6 +2003,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114158732803198026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779893834657098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a38c4d64c1eaf4ba6453c32a60ac80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipping: {fileID: 0}
+  interaction: {fileID: 0}
 --- !u!137 &137137101574169514
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

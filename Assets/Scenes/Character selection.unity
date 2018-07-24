@@ -1169,6 +1169,10 @@ MonoBehaviour:
     type: 2}
   femaleBikePrefab: {fileID: 1634841660407320, guid: 806592c81c2b06f40b8ff47e91d7642d,
     type: 2}
+  mainMenu: 0
+  characterSelection: 1
+  map: 2
+  vehicleEnhancement: 3
   loadingBar: {fileID: 1874530133}
   loadingImage: {fileID: 731345936}
 --- !u!1 &415803195
@@ -3218,7 +3222,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 396136239}
         m_MethodName: FemaleCharacter
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5379,8 +5383,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 400, y: 30}
+  m_AnchoredPosition: {x: 0, y: -43}
+  m_SizeDelta: {x: 400, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1754134711
 MonoBehaviour:
@@ -5394,7 +5398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61078995, g: 0.6320754, b: 0, a: 1}
+  m_Color: {r: 0.5733496, g: 0.5943396, b: 0.15979885, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5402,8 +5406,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 775866102d8aaca4ca362fd24172d8b9, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -6188,7 +6192,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 396136239}
         m_MethodName: MaleCharacter
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

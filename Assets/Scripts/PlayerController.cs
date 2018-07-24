@@ -44,13 +44,6 @@ public class PlayerController : MonoBehaviour {
         else {
             animator.SetBool("Jump", false);
         }
-
-        if (isInputActive && Input.GetButtonDown("Interact")) {
-            animator.SetBool("Pizza", true);
-        }
-        if (Input.GetButtonUp("Interact")) {
-            animator.SetBool("Pizza", false);
-        }
     }
 
     void PlaySound(Object sound) {
