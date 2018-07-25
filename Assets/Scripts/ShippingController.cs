@@ -58,19 +58,29 @@ public class ShippingController : MonoBehaviour {
         if (level < 9) {
             switch (level % 3) {
                 case 0:
-                    objective=GameObject.Instantiate(npc[level],tier1[i].GetComponent<Transform>());
+                    if (level != 0) {
+                        tier3[i-1].SetActive(false);
+                    }
+                    tier1[i].SetActive(true);
+                    objective =GameObject.Instantiate(npc[level],tier1[i].GetComponent<Transform>());
                     timer = time1;
                     break;
                 case 1:
+                    tier1[i].SetActive(false);
+                    tier2[i].SetActive(true);
                     objective = GameObject.Instantiate(npc[level], tier2[i].GetComponent<Transform>());
                     timer = time2;
                     break;
                 case 2:
+                    tier2[i].SetActive(false);
+                    tier3[i].SetActive(true);
                     objective = GameObject.Instantiate(npc[level], tier3[i].GetComponent<Transform>());
                     timer = time3;
                     break;
             }
         } else {
+            tier3[i-1].SetActive(false);
+            tier3[i].SetActive(true);
             objective = GameObject.Instantiate(npc[level], tier3[i].GetComponent<Transform>());
             timer = time3;
         }
@@ -95,30 +105,34 @@ public class ShippingController : MonoBehaviour {
     }
 
     public void PickUp() {
-        int i=Random.Range(0, 1);
+        float i=Random.Range(0, 1f);
         float gain;
 
         //Se viene preso un potenziamento in caso rimane poco tempo la possibilità di ottenerne altro aumenta
         if (timer < 15 && timer >0) { 
             if (i > .75) {
-                gain= Random.Range(1, 5);
+                Debug.Log("minore" + timer + " " + i);
+                gain = Random.Range(1, 5);
                 coins += gain;
                 monete.text = ((int)coins).ToString() + " €";
                 StartCoroutine(ShowMessage("Coins + " + ((int)gain).ToString(), 2));
             } else {
+                Debug.Log("minore" + timer + " " + i);
                 gain = Random.Range(3, 8);
                 timer += gain;
                 StartCoroutine(ShowMessage("Time + " + ((int)gain).ToString(), 2));
             }
         } else if (timer>0){
             if (i > .5) {
-                gain= Random.Range(1, 5);
+                Debug.Log("maggiore" + timer + " " + i);
+                gain = Random.Range(1, 5);
                 coins += gain;
                 monete.text = ((int)coins).ToString() + " €";
                 StartCoroutine(ShowMessage("Coins + " + ((int)gain).ToString(), 2));
             }
             else {
-                gain= Random.Range(1, 5);
+                Debug.Log("maggiore" + timer + " " + i);
+                gain = Random.Range(1, 5);
                 timer += gain;
                 StartCoroutine(ShowMessage("Time + " + ((int)gain).ToString(), 2));
             }
@@ -126,7 +140,7 @@ public class ShippingController : MonoBehaviour {
             gain= Random.Range(0, .5f);
             coins += gain;
             monete.text = ((int)coins).ToString() + " €";
-            StartCoroutine(ShowMessage("Coins + " + ((int)gain).ToString(), 2));
+            StartCoroutine(ShowMessage("Coins + " + gain.ToString(), 2));
         }
     }
 
