@@ -513,6 +513,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4287775576444858}
+  - component: {fileID: 82853678980656844}
+  - component: {fileID: 114362707676560194}
   m_Layer: 0
   m_Name: Motorbike
   m_TagString: Untagged
@@ -847,8 +849,6 @@ GameObject:
   - component: {fileID: 124332420932916470}
   - component: {fileID: 81607114234276630}
   - component: {fileID: 114766811593926530}
-  - component: {fileID: 82927636709677178}
-  - component: {fileID: 114796633084456736}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -7061,25 +7061,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &82902908831362422
+--- !u!82 &82853678980656844
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1106061493070058}
+  m_GameObject: {fileID: 1209312332900838}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243269157954736286, guid: 5facb62184a83f44c904ad85f0b6b005,
+  OutputAudioMixerGroup: {fileID: 243668014001545538, guid: 5facb62184a83f44c904ad85f0b6b005,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cfd1c85fca7fd5348ab57a1dc1e9126f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7157,25 +7157,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &82927636709677178
+--- !u!82 &82902908831362422
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331363051622770}
+  m_GameObject: {fileID: 1106061493070058}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243668014001545538, guid: 5facb62184a83f44c904ad85f0b6b005,
+  OutputAudioMixerGroup: {fileID: 243269157954736286, guid: 5facb62184a83f44c904ad85f0b6b005,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cfd1c85fca7fd5348ab57a1dc1e9126f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 100
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7709,6 +7709,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 2
   onTime: 0.5
+--- !u!114 &114362707676560194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209312332900838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83e1597f113ea44c86419a16e1d81b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114468029939773304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7735,7 +7746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraOrbit: {fileID: 4795196228452342}
-  target: {fileID: 4555195548036466}
+  target: {fileID: 4136861236681194}
   cameraSpeed: 5
 --- !u!114 &114780451394309614
 MonoBehaviour:
@@ -7777,17 +7788,6 @@ MonoBehaviour:
   engineOn: {fileID: 8300000, guid: 156a207539d74584baf9a486c9c18bf6, type: 3}
   engine: {fileID: 8300000, guid: 726b680b6a35ee649919deef604e180d, type: 3}
   engineOff: {fileID: 8300000, guid: e6715751fb38f2f46abe7523aa294bf0, type: 3}
---- !u!114 &114796633084456736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331363051622770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a83e1597f113ea44c86419a16e1d81b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124269871883766376
 Behaviour:
   m_ObjectHideFlags: 1

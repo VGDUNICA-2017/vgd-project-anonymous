@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - RiderPlayer
+  - Right Arrow Light
+  - Left Arrow Light
+  - Main Light
+  - Stop Light
+  - Retro Light
+  - Pick Up
+  - Workshop
+  - Tier1
+  - Tier2
+  - Tier3
+  - Pause
   layers:
   - Default
   - TransparentFX

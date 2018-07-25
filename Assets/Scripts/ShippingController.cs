@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class ShippingController : MonoBehaviour {
     public GameObject[] npc;
-    public GameObject[] tier1;
     public float time1;
-    public GameObject[] tier2;
     public float time2;
-    public GameObject[] tier3;
+    
     public float time3;
     public Text interaction;
     public Text countdown;
@@ -17,7 +15,11 @@ public class ShippingController : MonoBehaviour {
     public Text monete;
     public Compass compass;
 
-    private int level;
+    private GameObject[] tier1=null;
+    private GameObject[] tier2=null;
+    private GameObject[] tier3=null;
+
+    private int level=0;
     private float timer;
     private bool delivering = false;
     private float coins = 0;
@@ -25,13 +27,43 @@ public class ShippingController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        //Loading the savegame
+        Pause pause=FindObjectOfType<Pause>();
+        pause.LoadGame();
+        monete.text = ((int)coins).ToString() + " €";
+
+        //Loading levels
+        if (tier1 == null) {
+            tier1 = GameObject.FindGameObjectsWithTag("Tier1");
+            Shuffle(tier1);
+            foreach (GameObject tier in tier1) {
+                tier.SetActive(false);
+            }
+        }
+        if (tier2 == null) {
+            tier2 = GameObject.FindGameObjectsWithTag("Tier2");
+            Shuffle(tier2);
+            foreach (GameObject tier in tier2) {
+                tier.SetActive(false);
+            }
+        }
+        if (tier3 == null) {
+            tier3 = GameObject.FindGameObjectsWithTag("Tier3");
+            Shuffle(tier3);
+            foreach (GameObject tier in tier3) {
+                tier.SetActive(false);
+            }
+        }
         Shuffle(npc);
-        Shuffle(tier1);
-        Shuffle(tier2);
-        Shuffle(tier3);
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+
+        StartCoroutine(ShowMessage("To start a level go to pizzeria", 5));
     }
 
     private void Update() {
+        //If player is not delivering countdown is disabled
         if (delivering == true && timer>0) {
             timer -= Time.deltaTime;
             countdown.text = ((int)timer).ToString();
@@ -111,27 +143,23 @@ public class ShippingController : MonoBehaviour {
         //Se viene preso un potenziamento in caso rimane poco tempo la possibilità di ottenerne altro aumenta
         if (timer < 15 && timer >0) { 
             if (i > .75) {
-                Debug.Log("minore" + timer + " " + i);
                 gain = Random.Range(1, 5);
                 coins += gain;
                 monete.text = ((int)coins).ToString() + " €";
                 StartCoroutine(ShowMessage("Coins + " + ((int)gain).ToString(), 2));
             } else {
-                Debug.Log("minore" + timer + " " + i);
                 gain = Random.Range(3, 8);
                 timer += gain;
                 StartCoroutine(ShowMessage("Time + " + ((int)gain).ToString(), 2));
             }
         } else if (timer>0){
             if (i > .5) {
-                Debug.Log("maggiore" + timer + " " + i);
                 gain = Random.Range(1, 5);
                 coins += gain;
                 monete.text = ((int)coins).ToString() + " €";
                 StartCoroutine(ShowMessage("Coins + " + ((int)gain).ToString(), 2));
             }
             else {
-                Debug.Log("maggiore" + timer + " " + i);
                 gain = Random.Range(1, 5);
                 timer += gain;
                 StartCoroutine(ShowMessage("Time + " + ((int)gain).ToString(), 2));
@@ -174,6 +202,24 @@ public class ShippingController : MonoBehaviour {
 
     public int GetCoins() {
         return (int)coins;
+    }
+
+    public void SetCoins(float c) {
+        coins = c;
+    }
+
+    public int GetLevel() {
+        if (delivering == false) {
+            return level;
+        }
+        else {
+            return level-1;
+        }
+        
+    }
+
+    public void SetLevel(int l) {
+        level=l;
     }
 
     public void Spend(float spent) {

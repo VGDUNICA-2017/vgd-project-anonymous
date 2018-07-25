@@ -3,13 +3,13 @@
  using System.Collections.Generic;
 
 public class MusicPlayer : MonoBehaviour {
+    public bool paused=false;
     private new AudioSource audio;
     private Object[] myMusic; // declare this as Object array
     private Object[] myMusic1;
     private Object[] myMusic2;
     private Object[] myMusic3;
     private int inPlay = 0;
-    private AsyncOperation async;
 
     void Start() {
         audio = GetComponent<AudioSource>();
@@ -21,7 +21,7 @@ public class MusicPlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (inPlay !=0 && !audio.isPlaying) {
+        if (inPlay !=0 && !audio.isPlaying && !paused) {
             PlayRandomMusic();
         }
         if (Input.GetKeyDown("1") && inPlay!=1) {

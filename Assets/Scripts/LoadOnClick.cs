@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class LoadOnClick : MonoBehaviour {
     public GameObject malePrefab;
@@ -54,9 +56,36 @@ public class LoadOnClick : MonoBehaviour {
     }
 
     public void NewGame() {
+        File.Delete(Application.persistentDataPath + "/gamesave.save");
+        ClickAsync(characterSelection);
+    }
+
+    public void MainMenu() {
+        ClickAsync(mainMenu);
+    }
+
+    public void LoadGame() {
         ClickAsync(characterSelection);
     }
     
+    public void FreeMode() {
+        Save save = new Save {
+            level = 0,
+            coins = 100,
+
+            engineLevel = 1,
+            brakeLevel = 1,
+            steerLevel = 1
+        };
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+        bf.Serialize(file, save);
+        file.Close();
+
+        ClickAsync(characterSelection);
+    }
+
     public void QuitGame() {
         Application.Quit();
     }

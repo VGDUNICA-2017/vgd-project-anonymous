@@ -63,6 +63,30 @@ public class EnhancementController : MonoBehaviour {
         }
     }
 
+    public int GetEngineLevel() {
+        return engineLevel;
+    }
+
+    public int GetBrakeLevel() {
+        return brakeLevel;
+    }
+
+    public int GetSteerLevel() {
+        return steerLevel;
+    }
+
+    public void SetEngineLevel(int l) {
+        engineLevel=l;
+    }
+
+    public void SetBrakeLevel(int l) {
+        brakeLevel=l;
+    }
+
+    public void SetSteerLevel(int l) {
+        steerLevel=l;
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (shippingController.InDelivery() == false) {
             interaction.text = "Press 'E' to enter workshop";
