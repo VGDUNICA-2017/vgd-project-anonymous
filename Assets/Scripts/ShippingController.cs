@@ -25,13 +25,15 @@ public class ShippingController : MonoBehaviour {
     private float coins = 0;
     private GameObject objective=null;
 
-    // Use this for initialization
-    void Start() {
+    private void Awake() {
         //Loading the savegame
-        Pause pause=FindObjectOfType<Pause>();
+        Pause pause = FindObjectOfType<Pause>();
         pause.LoadGame();
         monete.text = ((int)coins).ToString() + " €";
+    }
 
+    // Use this for initialization
+    void Start() {
         //Loading levels
         if (tier1 == null) {
             tier1 = GameObject.FindGameObjectsWithTag("Tier1");
@@ -194,6 +196,15 @@ public class ShippingController : MonoBehaviour {
         compass.objective = transform;
     }
 
+    public void EndDelivery() {
+        timer = 0;
+        delivering = false;
+        livello.text = "";
+        countdown.text = "";
+        level--;
+        compass.objective = transform;
+    }
+
     IEnumerator ShowMessage(string message, float delay) {
         interaction.text = message;
         yield return new WaitForSeconds(delay);
@@ -202,6 +213,10 @@ public class ShippingController : MonoBehaviour {
 
     public int GetCoins() {
         return (int)coins;
+    }
+
+    public void UpdateCoins() {
+        monete.text = ((int)coins).ToString() + " €";
     }
 
     public void SetCoins(float c) {

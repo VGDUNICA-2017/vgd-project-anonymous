@@ -36,6 +36,7 @@ public class VehicleController : MonoBehaviour {
     public AudioClip engineOn;
     public AudioClip engine;
     public AudioClip engineOff;
+    public bool paused = false;
 
     private GameObject player;
     private Animator animator;
@@ -105,7 +106,7 @@ public class VehicleController : MonoBehaviour {
         if (isinvehicle == true) {
             UpdateLights(brakeForward, brakeBack);
 
-            if (!audio.isPlaying) {
+            if (!audio.isPlaying && !paused) {
                 audio.Play();
             }
             if (speedVal > .25) {
@@ -285,7 +286,7 @@ public class VehicleController : MonoBehaviour {
     //If the player is on the vehicle he can abandon it
     void Exiting(){
         if (isinvehicle == true){
-            if (Input.GetButtonDown("Interact")){
+            if (Input.GetButtonDown("Ride")){
                 player.transform.position = spawn.position;
                 player.SetActive(true);
                 rider.SetActive(false);
@@ -303,7 +304,7 @@ public class VehicleController : MonoBehaviour {
     //If the player is near the vehicle he can mount it
     void Entering(){
         if (playerClose == true && isinvehicle == false) {
-            if (Input.GetButtonDown("Interact")){
+            if (Input.GetButtonDown("Ride")){
                 player.SetActive(false);
                 rider.SetActive(true);
                 lights.SetActive(true);

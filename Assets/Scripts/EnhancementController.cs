@@ -6,60 +6,96 @@ using UnityEngine.UI;
 
 public class EnhancementController : MonoBehaviour {
     public ShippingController shippingController;
-    public VehicleController vehicle;
-    public PlayerController player;
+    public GameObject MotoVehicle;
+    public GameObject player;
     public Text interaction;
     public Text error;
-    public LoadOnClick load;
+    public GameObject gui;
+    public GameObject enhanceGui;
+    public GameObject enhCamera;
+    public Slider engineSlider;
+    public Slider brakeSlider;
+    public Slider steerSlider;
 
-    public Slider loadingBar;
-    public GameObject loadingImage;
+    private int engineLevel=0;
+    private int brakeLevel=0;
+    private int steerLevel=0;
 
-    private int engineLevel=1;
-    private int brakeLevel=1;
-    private int steerLevel=1;
-    private Transform bikeTransform;
+    private bool isIn = false;
+    private VehicleController vehicle;
 
     public void Start() {
         shippingController = GameObject.FindGameObjectWithTag("GameController").GetComponent<ShippingController>();
-        vehicle = GameObject.FindGameObjectWithTag("RiderPlayer").GetComponent<VehicleController>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        MotoVehicle = GameObject.FindGameObjectWithTag("RiderPlayer");
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        vehicle = MotoVehicle.GetComponent<VehicleController>();
         foreach (Text t in GameObject.FindObjectsOfType<Text>()) {
             if (t.name.Equals("Interaction")){
                 interaction = t;
             }
         }
+        vehicle.maxMotorTorque += vehicle.maxMotorTorque * (0.1f * (engineLevel));
+        vehicle.maxForwardBrake += vehicle.maxForwardBrake * (0.1f * (brakeLevel));
+        vehicle.maxBackBrake += vehicle.maxBackBrake * (0.1f * (brakeLevel));
+        vehicle.maxSteerAngle += vehicle.maxSteerAngle * (0.05f * (engineLevel));
+
+        engineSlider.value = engineLevel;
+        brakeSlider.value = brakeLevel;
+        steerSlider.value = steerLevel;
     }
 
     public void EngineEnhance() {
-        if (shippingController.GetCoins() >= (5 * engineLevel)) {
-            shippingController.Spend(5 * engineLevel);
-            vehicle.maxMotorTorque *= 0.05f;
+        if (engineLevel<3 && shippingController.GetCoins() >= (5 * (engineLevel+1))) {
+            shippingController.Spend(5 * (engineLevel+1));
+            vehicle.maxMotorTorque += vehicle.maxMotorTorque*0.1f;
             engineLevel++;
-        }else {
-            error.text = "Credito non sufficiente";
+            engineSlider.value = engineLevel;
+            shippingController.UpdateCoins();
+        }
+        else {
+            if (engineLevel >= 3) {
+                StartCoroutine(ShowMessage(1));
+            }
+            else {
+                StartCoroutine(ShowMessage(0));
+            }
         }
     }
 
     public void BrakeEnhance() {
-        if (shippingController.GetCoins() >= (5 * brakeLevel)) {
-            shippingController.Spend(5 * brakeLevel);
-            vehicle.maxForwardBrake *= 0.05f;
-            vehicle.maxBackBrake *= 0.05f;
+        if (brakeLevel < 3 && shippingController.GetCoins() >= (5 * (brakeLevel+1))) {
+            shippingController.Spend(5 * (brakeLevel+1));
+            vehicle.maxForwardBrake += vehicle.maxForwardBrake*0.1f;
+            vehicle.maxBackBrake += vehicle.maxBackBrake*0.1f;
             brakeLevel++;
+            brakeSlider.value = brakeLevel;
+            shippingController.UpdateCoins();
         }
         else {
-            error.text = "Credito non sufficiente";
+            if (brakeLevel >= 3) {
+                StartCoroutine(ShowMessage(1));
+            } else {
+                StartCoroutine(ShowMessage(0));
+            }
         }
     }
 
     public void SteerEnhance() {
-        if (shippingController.GetCoins() >= (5 * steerLevel)) {
-            shippingController.Spend(5 * steerLevel);
-            vehicle.maxSteerAngle *= 0.05f;
+        if (steerLevel < 3 && shippingController.GetCoins() >= (5 * (steerLevel+1))) {
+            shippingController.Spend(5 * (steerLevel+1));
+            vehicle.maxSteerAngle += vehicle.maxSteerAngle*0.05f;
             steerLevel++;
-        }else {
-            error.text = "Credito non sufficiente";
+            steerSlider.value = steerLevel;
+            shippingController.UpdateCoins();
+        }
+        else {
+            if (steerLevel >= 3) {
+                StartCoroutine(ShowMessage(1));
+            }
+            else {
+                StartCoroutine(ShowMessage(0));
+            }
         }
     }
 
@@ -75,6 +111,10 @@ public class EnhancementController : MonoBehaviour {
         return steerLevel;
     }
 
+    public bool InEnhancement() {
+        return isIn;
+    }
+
     public void SetEngineLevel(int l) {
         engineLevel=l;
     }
@@ -84,7 +124,7 @@ public class EnhancementController : MonoBehaviour {
     }
 
     public void SetSteerLevel(int l) {
-        steerLevel=l;
+        steerLevel =l;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -93,14 +133,43 @@ public class EnhancementController : MonoBehaviour {
         }
     }
 
+    private void Entering() {
+        gui.SetActive(false);
+        enhanceGui.SetActive(true);
+        enhCamera.SetActive(true);
+        Cursor.visible = true;
+        player.SetActive(false);
+        isIn = true;
+        foreach (AudioSource audio in MotoVehicle.GetComponents<AudioSource>()) {
+            audio.Pause();
+        }
+    }
+
+    IEnumerator ShowMessage(int i) {
+        if (i == 0) {
+            error.text = "Not enough money";
+        } else {
+            error.text = "Level Max";
+        }
+        yield return new WaitForSeconds(2);
+        error.text = "";
+    }
+
+    public void Exiting() {
+        gui.SetActive(true);
+        enhanceGui.SetActive(false);
+        enhCamera.SetActive(false);
+        Cursor.visible = false;
+        player.SetActive(true);
+        isIn = false;
+        foreach (AudioSource audio in MotoVehicle.GetComponents<AudioSource>()) {
+            audio.UnPause();
+        }
+    }
+
     private void OnTriggerStay(Collider other) {
-        if (shippingController.InDelivery() == false && Input.GetButtonDown("Interact")) {
-            loadingImage.SetActive(true);
-            load.AddAsync(3);
-            bikeTransform = GameObject.FindGameObjectWithTag("RiderPlayer").transform;
-            SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("RiderPlayer"), SceneManager.GetSceneByBuildIndex(3));
-            GameObject.FindGameObjectWithTag("RiderPlayer").transform.position.Set(0, 0, 0);
-            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(3));
+        if (shippingController.InDelivery() == false && Input.GetButtonDown("Interact") && other.tag.Equals("Player")) {
+            Entering();
         }
     }
 

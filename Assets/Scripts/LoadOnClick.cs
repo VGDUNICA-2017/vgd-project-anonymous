@@ -19,7 +19,6 @@ public class LoadOnClick : MonoBehaviour {
     public GameObject loadingImage;
     
     private AsyncOperation async;
-    private Transform bikeTransform;
 
     public void ClickAsync(int level) {
         loadingImage.SetActive(true);
@@ -61,6 +60,9 @@ public class LoadOnClick : MonoBehaviour {
     }
 
     public void MainMenu() {
+        loadingImage.SetActive(true);
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Destroy(GameObject.FindGameObjectWithTag("RiderPlayer"));
         ClickAsync(mainMenu);
     }
 
@@ -73,9 +75,9 @@ public class LoadOnClick : MonoBehaviour {
             level = 0,
             coins = 100,
 
-            engineLevel = 1,
-            brakeLevel = 1,
-            steerLevel = 1
+            engineLevel = 10,
+            brakeLevel = 10,
+            steerLevel = 3
         };
 
         BinaryFormatter bf = new BinaryFormatter();
@@ -100,22 +102,6 @@ public class LoadOnClick : MonoBehaviour {
         DontDestroyOnLoad(GameObject.Instantiate(femaleBikePrefab));
         DontDestroyOnLoad(GameObject.Instantiate(femalePrefab));
         ClickAsync(map);
-    }
-
-    public void EnhanceLevel() {
-        AddAsync(vehicleEnhancement);
-        bikeTransform = GameObject.FindGameObjectWithTag("RiderPlayer").transform;
-        SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("RiderPlayer"), SceneManager.GetSceneByBuildIndex(vehicleEnhancement));
-        GameObject.FindGameObjectWithTag("RiderPlayer").transform.position.Set(0, 0, 0);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(vehicleEnhancement));
-    }
-
-    public void EndEnhancement() {
-        loadingImage.SetActive(true);
-        SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("RiderPlayer"), SceneManager.GetSceneByBuildIndex(map));
-        GameObject.FindGameObjectWithTag("RiderPlayer").transform.position.Set(bikeTransform.position.x, bikeTransform.position.y, bikeTransform.position.z);
-        StartCoroutine(UnloadLevelWithBar(vehicleEnhancement));
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(map));
     }
     
 }

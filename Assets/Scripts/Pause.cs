@@ -9,9 +9,11 @@ using System.Collections.Generic;
 public class Pause : MonoBehaviour {
     public GameObject gui;
     public GameObject pauseGui;
+    public EnhancementController enhancementController;
+    public Text interaction;
 
     void Update() {
-        if (Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Escape)) {
+        if ((Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Escape))) {
             TogglePause();
         }
     }
@@ -26,6 +28,7 @@ public class Pause : MonoBehaviour {
                 audios.UnPause();
             }
             GameObject.FindObjectOfType<MusicPlayer>().paused = false;
+            GameObject.FindObjectOfType<VehicleController>().paused = false;
         }
         else {
             Time.timeScale = 0f;
@@ -33,6 +36,7 @@ public class Pause : MonoBehaviour {
             pauseGui.SetActive(true);
             Cursor.visible = true;
             GameObject.FindObjectOfType<MusicPlayer>().paused = true;
+            GameObject.FindObjectOfType<VehicleController>().paused = true;
             foreach (AudioSource audios in GameObject.FindObjectsOfType<AudioSource>()) {
                 audios.Pause();
             }
@@ -40,16 +44,21 @@ public class Pause : MonoBehaviour {
     }
 
     public void SaveGame() {
-        // 1
-        Save save = CreateSaveGameObject();
+        ShippingController shipping = GameObject.FindGameObjectWithTag("GameController").GetComponent<ShippingController>();
 
-        // 2
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
-        bf.Serialize(file, save);
-        file.Close();
-               
-        Debug.Log("Game Saved");
+        if (shipping.InDelivery() == false) {
+            Save save = CreateSaveGameObject();
+            
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+            bf.Serialize(file, save);
+            file.Close();
+
+            StartCoroutine(ShowMessage(0));
+        } else {
+            StartCoroutine(ShowMessage(3));
+        }
+        
     }
 
     private Save CreateSaveGameObject() {
@@ -87,19 +96,42 @@ public class Pause : MonoBehaviour {
              vehicle.SetBrakeLevel(save.brakeLevel);
              vehicle.SetSteerLevel(save.steerLevel);
 
-            Debug.Log("Game Loaded");
+            StartCoroutine(ShowMessage(1));
+
+            if (shipping.InDelivery() == true) {
+                shipping.EndDelivery();
+            }
         }
         else {
             shipping.SetLevel(0);
             shipping.SetCoins(0);
-            vehicle.SetEngineLevel(1);
-            vehicle.SetBrakeLevel(1);
-            vehicle.SetSteerLevel(1);
-            Debug.Log("No game saved!");
+            vehicle.SetEngineLevel(0);
+            vehicle.SetBrakeLevel(0);
+            vehicle.SetSteerLevel(0);
+            StartCoroutine(ShowMessage(2));
         }
     }
 
     public void QuitGame() {
         Application.Quit();
+    }
+
+    IEnumerator ShowMessage(int i) {
+        switch (i) {
+            case 0:
+                interaction.text = "Game Saved";
+                break;
+            case 1:
+                interaction.text = "Game loaded";
+                break;
+            case 2:
+                interaction.text = "No Game Saved";
+                break;
+            case 3:
+                interaction.text = "Cannot save in delivery";
+                break;
+        }
+        yield return new WaitForSeconds(2);
+        interaction.text = "";
     }
 }
