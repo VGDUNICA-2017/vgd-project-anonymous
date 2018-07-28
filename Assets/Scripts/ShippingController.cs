@@ -172,7 +172,7 @@ public class ShippingController : MonoBehaviour {
             gain= Random.Range(0, .5f);
             coins += gain;
             monete.text = ((int)coins).ToString() + " €";
-            StartCoroutine(ShowMessage("Coins + " + gain.ToString(), 2));
+            StartCoroutine(ShowMessage("Coins + " + gain.ToString("0.00"), 2));
         }
     }
 
@@ -186,7 +186,7 @@ public class ShippingController : MonoBehaviour {
         countdown.text = "";
 
         if (time > 0) {
-            gain = (time*level)*0.1f + Random.Range(2, 7);
+            gain = (time*level)*0.05f + Random.Range(1, 5);
             coins += gain;
             monete.text = ((int)coins).ToString() + " €";
             StartCoroutine(ShowMessage("Level " + level.ToString() + " Completed: Coins + " + ((int)gain).ToString(), 2));

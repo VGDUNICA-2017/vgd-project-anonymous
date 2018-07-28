@@ -50,7 +50,6 @@ public class VehicleController : MonoBehaviour {
     //Information about previous FixedUpdate
     private Vector3 prevPos = new Vector3();
     private float prevAngle = 0;
-    private float prevOmega = 0;
     private float speedVal = 0;
     private float prevSteer = 0f;
     private float brakeForward;
@@ -204,7 +203,6 @@ public class VehicleController : MonoBehaviour {
         var angle = Vector3.Dot(moveForward, Vector3.Cross(transform.up, new Vector3(0, 1, 0)));
         var omega = (angle - prevAngle) / Time.fixedDeltaTime;
         prevAngle = angle;
-        prevOmega = omega;
         
         if (speedVal < lowSpeed) {
             float t = speedVal / lowSpeed;
@@ -344,6 +342,6 @@ public class VehicleController : MonoBehaviour {
     void OnGUI() {
         GUI.color = Color.black;
         var area = new Rect(0, 0, 100, 250);
-        GUI.Label(area, speedVal.ToString("f1") + " m/s" + "\nangle = " + prevAngle.ToString("f3") + "\nangle' = " + prevOmega.ToString("f3") + "\nfwbrake' = " + brakeForward.ToString("f3") + "\nbkbrake' = " + brakeBack.ToString("f3"));
+        GUI.Label(area, speedVal.ToString("f1") + " m/s" + "\nangle = " + prevAngle.ToString("f3") + "\nfwbrake' = " + brakeForward.ToString("f3") + "\nbkbrake' = " + brakeBack.ToString("f3"));
     }*/
 }

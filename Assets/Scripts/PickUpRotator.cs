@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpRotator : MonoBehaviour {
     private ShippingController shippingController;
-    public ParticleSystem esplosione;
+    public GameObject explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,9 @@ public class PickUpRotator : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.tag.Equals("Player") || other.tag.Equals("RiderPlayer")) {
             shippingController.PickUp();
-            Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled=false;
+            explosion.SetActive(true);
+            Destroy(gameObject, 2);
         }
     }
 }
