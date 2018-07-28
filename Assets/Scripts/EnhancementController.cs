@@ -10,6 +10,7 @@ public class EnhancementController : MonoBehaviour {
     public GameObject player;
     public Text interaction;
     public Text error;
+    public Text coins;
     public GameObject gui;
     public GameObject enhanceGui;
     public GameObject enhCamera;
@@ -52,6 +53,7 @@ public class EnhancementController : MonoBehaviour {
             engineLevel++;
             engineSlider.value = engineLevel;
             shippingController.UpdateCoins();
+            coins.text = shippingController.GetCoins().ToString();
         }
         else {
             if (engineLevel >= 3) {
@@ -71,6 +73,7 @@ public class EnhancementController : MonoBehaviour {
             brakeLevel++;
             brakeSlider.value = brakeLevel;
             shippingController.UpdateCoins();
+            coins.text = shippingController.GetCoins().ToString();
         }
         else {
             if (brakeLevel >= 3) {
@@ -88,6 +91,8 @@ public class EnhancementController : MonoBehaviour {
             steerLevel++;
             steerSlider.value = steerLevel;
             shippingController.UpdateCoins();
+            coins.text = shippingController.GetCoins().ToString();
+
         }
         else {
             if (steerLevel >= 3) {
@@ -140,6 +145,7 @@ public class EnhancementController : MonoBehaviour {
         Cursor.visible = true;
         player.SetActive(false);
         isIn = true;
+        coins.text = shippingController.GetCoins().ToString();
         foreach (AudioSource audio in MotoVehicle.GetComponents<AudioSource>()) {
             audio.Pause();
         }

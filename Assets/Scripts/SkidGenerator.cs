@@ -15,7 +15,8 @@ public class SkidGenerator : MonoBehaviour {
     void Start () {
         timer = time;
 	}
-	
+
+    //https://www.youtube.com/watch?v=iCeNeKOsC2I
 	// Update is called once per frame
 	void Update () {
         colliderCenter = collider.transform.TransformPoint(collider.center);

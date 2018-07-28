@@ -15,6 +15,7 @@ public class Compass : MonoBehaviour {
         bikePlayer = GameObject.FindGameObjectWithTag("RiderPlayer").GetComponent<Transform>();
     }
 
+    //https://stackoverflow.com/questions/25899301/get-angle-between-two-transforms-in-a-single-plane
     void Update() {
         Transform active=player;
 
@@ -45,6 +46,7 @@ public class Compass : MonoBehaviour {
 
     }
 
+    //https://stackoverflow.com/questions/25899301/get-angle-between-two-transforms-in-a-single-plane
     public Vector3 Project(Vector3 v) {
         return v - (Vector3.Dot(v, Vector3.up) / Vector3.Dot(Vector3.up, Vector3.up)) * Vector3.up;
     }

@@ -20,6 +20,7 @@ public class LoadOnClick : MonoBehaviour {
     
     private AsyncOperation async;
 
+    //https://unity3d.com/learn/tutorials/modules/beginner/live-training-archive/creating-a-scene-menu?playlist=17111
     public void ClickAsync(int level) {
         loadingImage.SetActive(true);
         StartCoroutine(LoadLevelWithBar(level));

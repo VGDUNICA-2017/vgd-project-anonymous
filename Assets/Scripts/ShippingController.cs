@@ -75,6 +75,8 @@ public class ShippingController : MonoBehaviour {
         }
     }
 
+
+    //https://forum.unity.com/threads/randomize-array-in-c.86871/
     void Shuffle(GameObject[] array) {
         // Knuth shuffle algorithm
         for (int i = 0; i < array.Length; i++) {

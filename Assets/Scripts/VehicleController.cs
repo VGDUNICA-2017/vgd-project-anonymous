@@ -122,6 +122,7 @@ public class VehicleController : MonoBehaviour {
         
     }
 
+    //https://github.com/Kright/MotorcyclePhysics
     void FixedUpdate() {
         var input = new MotoInput();
 
@@ -182,6 +183,7 @@ public class VehicleController : MonoBehaviour {
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0);
     }
 
+    //https://github.com/Kright/MotorcyclePhysics
     //Probably picks up the grounded vehicle
     private void PickUp() {
         Transform transform = GetComponent<Transform>();
@@ -189,6 +191,7 @@ public class VehicleController : MonoBehaviour {
         transform.rotation = new Quaternion(0, 0, 0, 1);
     }
 
+    //https://github.com/Kright/MotorcyclePhysics
     //Controls vehicle movement
     private MotoInput MotoControl(MotoInput input) {       
         var actualPos = transform.position;
@@ -226,6 +229,7 @@ public class VehicleController : MonoBehaviour {
         return input;
     }
 
+    //https://github.com/Kright/MotorcyclePhysics
     //Moves the vehicle
     private void MotoMove(MotoInput input) {
         forwardCollider.steerAngle = Mathf.Clamp(input.steer, -1, 1) * maxSteerAngle;
@@ -235,6 +239,7 @@ public class VehicleController : MonoBehaviour {
         backCollider.motorTorque = maxMotorTorque * input.acceleration;
     }
 
+    //https://github.com/Kright/MotorcyclePhysics
     private void UpdateWheels() {
         float delta = Time.fixedDeltaTime;
 
@@ -335,10 +340,10 @@ public class VehicleController : MonoBehaviour {
         }
     }
 
-    //Eliminare
+    /*Debug info
     void OnGUI() {
         GUI.color = Color.black;
         var area = new Rect(0, 0, 100, 250);
         GUI.Label(area, speedVal.ToString("f1") + " m/s" + "\nangle = " + prevAngle.ToString("f3") + "\nangle' = " + prevOmega.ToString("f3") + "\nfwbrake' = " + brakeForward.ToString("f3") + "\nbkbrake' = " + brakeBack.ToString("f3"));
-    }
+    }*/
 }

@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour {
         cameraOrbit.position = target.position;
     }
 
+    //https://stackoverflow.com/questions/34117591/c-sharp-with-unity-3d-how-do-i-make-a-camera-move-around-an-object-when-user-mo/48997101#48997101
     void Update() {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 

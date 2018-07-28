@@ -43,6 +43,7 @@ public class Pause : MonoBehaviour {
         }
     }
 
+    //https://www.raywenderlich.com/160815/save-load-game-unity
     public void SaveGame() {
         ShippingController shipping = GameObject.FindGameObjectWithTag("GameController").GetComponent<ShippingController>();
 
@@ -76,6 +77,7 @@ public class Pause : MonoBehaviour {
         return save;
     }
 
+    //https://www.raywenderlich.com/160815/save-load-game-unity
     public void LoadGame() {
         ShippingController shipping = GameObject.FindGameObjectWithTag("GameController").GetComponent<ShippingController>();
         EnhancementController vehicle = GameObject.FindGameObjectWithTag("Workshop").GetComponent<EnhancementController>();

@@ -8,7 +8,7 @@ public class Shipped : MonoBehaviour {
     public Text interaction;
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag.Equals("Player") && shipping.InDelivery()==true) {
+        if ((other.tag.Equals("Player") || (other.tag.Equals("RiderPlayer"))) && shipping.InDelivery()==true) {
             interaction.text = "Press 'E' to deliver pizza";
         }
     }
