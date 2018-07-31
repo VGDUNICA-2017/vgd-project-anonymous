@@ -9,6 +9,7 @@ public class EnhancementController : MonoBehaviour {
     public GameObject MotoVehicle;
     public GameObject player;
     public Text interaction;
+    public Text motoInteraction;
     public Text error;
     public Text coins;
     public GameObject gui;
@@ -31,6 +32,9 @@ public class EnhancementController : MonoBehaviour {
 
         player = GameObject.FindGameObjectWithTag("Player");
         vehicle = MotoVehicle.GetComponent<VehicleController>();
+        vehicle.interaction = motoInteraction;
+        vehicle.gameInteraction = interaction;
+
         foreach (Text t in GameObject.FindObjectsOfType<Text>()) {
             if (t.name.Equals("Interaction")){
                 interaction = t;

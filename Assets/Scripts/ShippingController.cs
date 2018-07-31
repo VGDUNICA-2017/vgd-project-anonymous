@@ -255,14 +255,17 @@ public class ShippingController : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.tag.Equals("Player") && delivering == false && Input.GetButtonDown("Interact")) {
-            if (objective != null) {
-                GameObject.Destroy(objective);
+        if (other.tag.Equals("Player") && delivering == false) {
+            interaction.text = "Press 'E' to load next level";
+            if (Input.GetButtonDown("Interact")) {
+                if (objective != null) {
+                    GameObject.Destroy(objective);
+                }
+                NextLevel();
+                interaction.text = "";
+                livello.text = "Lv " + level.ToString();
+                delivering = true;
             }
-            NextLevel();
-            interaction.text = "";
-            livello.text = "Lv " + level.ToString();
-            delivering = true;
         }
     }
 

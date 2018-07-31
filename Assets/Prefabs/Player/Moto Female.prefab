@@ -4076,7 +4076,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 800
   field of view: 80
   orthographic: 0
   orthographic size: 5
@@ -7369,6 +7369,8 @@ MonoBehaviour:
   engine: {fileID: 8300000, guid: 726b680b6a35ee649919deef604e180d, type: 3}
   engineOff: {fileID: 8300000, guid: e6715751fb38f2f46abe7523aa294bf0, type: 3}
   paused: 0
+  interaction: {fileID: 0}
+  gameInteraction: {fileID: 0}
 --- !u!114 &114909066203943458
 MonoBehaviour:
   m_ObjectHideFlags: 1

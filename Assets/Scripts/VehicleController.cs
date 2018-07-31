@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VehicleController : MonoBehaviour {
     //Vehicle Characteristics
@@ -37,6 +38,8 @@ public class VehicleController : MonoBehaviour {
     public AudioClip engine;
     public AudioClip engineOff;
     public bool paused = false;
+    public Text interaction;
+    public Text gameInteraction;
 
     private GameObject player;
     private Animator animator;
@@ -290,11 +293,14 @@ public class VehicleController : MonoBehaviour {
     void Exiting(){
         if (isinvehicle == true){
             if (Input.GetButtonDown("Ride")){
+
                 player.transform.position = spawn.position;
                 player.SetActive(true);
                 rider.SetActive(false);
                 lights.SetActive(false);
                 isinvehicle = false;
+
+                interaction.text = "Press 'F' to ride vehicle";
 
                 audio.Stop();
                 audio.pitch = 1;
@@ -307,10 +313,14 @@ public class VehicleController : MonoBehaviour {
     //If the player is near the vehicle he can mount it
     void Entering(){
         if (playerClose == true && isinvehicle == false) {
+            interaction.text = "Press 'F' to ride vehicle";
             if (Input.GetButtonDown("Ride")){
                 player.SetActive(false);
                 rider.SetActive(true);
                 lights.SetActive(true);
+
+                interaction.text = "";
+                gameInteraction.text = "";
 
                 audio.pitch = 1;
                 audio.clip = engineOn;
@@ -323,8 +333,9 @@ public class VehicleController : MonoBehaviour {
     }
 
     //Knows if player is near
-    public void OnTriggerEnter(Collider other){
+    public void OnTriggerEnter(Collider other) {
         if (other.tag == playertag){
+            interaction.text = "Press 'F' to ride vehicle";
             playerClose = true;
             player = other.gameObject;
         }
@@ -333,6 +344,7 @@ public class VehicleController : MonoBehaviour {
     //Knows when player got too far
     public void OnTriggerExit(Collider other){
         if (other.tag == playertag){
+            interaction.text = "";
             playerClose = false; //player out of range
             player = null;
         }
